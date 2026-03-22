@@ -1,0 +1,120 @@
+.section {
+  padding: calc(var(--navbar-height) + var(--space-20)) 0 var(--space-20);
+  background: var(--color-bg-primary);
+  position: relative;
+  overflow: hidden;
+  min-height: 100dvh;
+  padding-bottom: var(--space-32);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+/* Label */
+.labelRow {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-10);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* Track */
+.track {
+  position: relative;
+  overflow: hidden;
+
+  /* Fade edges */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+.inner {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  animation: marquee 36s linear infinite;
+  will-change: transform;
+}
+
+.track:hover .inner {
+  animation-play-state: paused;
+}
+
+/* Items */
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-8);
+  border-right: 1px solid var(--color-border);
+  white-space: nowrap;
+  transition: background var(--duration-fast);
+}
+
+.item:hover {
+  background: var(--color-accent-dim);
+}
+
+.itemDot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.item:hover .itemDot {
+  opacity: 1;
+}
+
+.itemName {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
+  letter-spacing: 0.03em;
+  transition: color var(--duration-fast);
+}
+
+.item:hover .itemName {
+  color: var(--color-accent);
+}
+
+.itemCategory {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: var(--weight-regular);
+  color: var(--color-text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--duration-fast), color var(--duration-fast);
+}
+
+.item:hover .itemCategory {
+  border-color: var(--color-border-accent);
+  color: var(--color-accent);
+}

@@ -1,0 +1,26 @@
+.section {
+  padding: calc(var(--navbar-height) + var(--section-pad-y)) 0 var(--section-pad-y);
+  background: var(--color-bg-primary);
+  position: relative;
+  min-height: 100dvh;
+  padding-bottom: var(--space-32);
+}
+
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
